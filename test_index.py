@@ -19,7 +19,7 @@ class TestHelloWorld(unittest.TestCase):
     def test_heading(self):
         self.driver.get("http://localhost:9000")
         heading = self.driver.find_element(By.TAG_NAME, "h1")
-        self.assertEqual(heading.text, "Hola Mundo")
+        self.assertEqual(heading.text.strip(), "Hola Mundo")
 
     def tearDown(self):
         self.driver.quit()
