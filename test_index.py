@@ -13,11 +13,11 @@ class TestHelloWorld(unittest.TestCase):
         self.driver = webdriver.Chrome(options=options)
 
     def test_title(self):
-        self.driver.get("http://localhost:9000")
+        self.driver.get("http://localhost:9000:80")
         self.assertEqual(self.driver.title, "Hola Mundo")
 
     def test_heading(self):
-        self.driver.get("http://localhost:9000")
+        self.driver.get("http://localhost:9000:80")
         heading = self.driver.find_element(By.TAG_NAME, "h1")
         self.assertEqual(heading.text.strip(), "Hola Mundo")
 
