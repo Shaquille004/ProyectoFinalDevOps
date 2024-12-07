@@ -1,11 +1,13 @@
-import unittest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+import unittest
 
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path=r"C:\Users\shaqu\Desktop\chromedriver.exe")
+        service = Service(r"C:\Users\shaqu\Desktop\chromedriver.exe")
+        self.driver = webdriver.Chrome(service=service)
 
     def test_title(self):
         self.driver.get("http://localhost:9000")
