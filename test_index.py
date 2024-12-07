@@ -1,15 +1,12 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-import unittest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        # Ruta al OperaDriver
+        self.driver = webdriver.Opera(executable_path="path_to_operadriver")
 
     def test_title(self):
         self.driver.get("http://localhost:9000")
