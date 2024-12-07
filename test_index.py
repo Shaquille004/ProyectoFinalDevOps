@@ -5,8 +5,7 @@ from selenium.webdriver.common.by import By
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
-        # Ruta al OperaDriver
-        self.driver = webdriver.Opera(executable_path="path_to_operadriver")
+        self.driver = webdriver.Chrome(executable_path=r"C:\Users\shaqu\Desktop\chromedriver.exe")
 
     def test_title(self):
         self.driver.get("http://localhost:9000")
