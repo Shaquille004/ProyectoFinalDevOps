@@ -1,10 +1,27 @@
 import unittest
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-class TestIndexPage(unittest.TestCase):
-    def test_header(self):
-        with open("index.html", "r", encoding="utf-8") as f:
-            content = f.read()
-            self.assertIn("<h1>Hola Mundo</h1>", content, "El encabezado no contiene 'Hola Mundo'")
+class TestHelloWorld(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+
+    def test_title(self):
+        self.driver.get("http://localhost:9000")
+        self.assertEqual(self.driver.title, "Hola Mundo")
+
+    def test_heading(self):
+        self.driver.get("http://localhost:9000")
+        heading = self.driver.find_element(By.TAG_NAME, "h1")
+        self.assertEqual(heading.text, "Hola Mundo")
+
+    def tearDown(self):
+        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
