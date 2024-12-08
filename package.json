@@ -1,0 +1,13 @@
+{
+    "name": "test-project",
+    "version": "1.0.0",
+    "description": "Project to test index.html",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jsdom": "^25.0.1"
+    }
+}
